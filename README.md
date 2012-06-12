@@ -13,4 +13,3 @@ $table = new \tablestrap\table(array(
 An example panel:
 $panel = new\tablestrap\panel(array('ID'=>'1', 'name'=>'word', 'status'=>'live')
             );
-            echo $panel->render();
