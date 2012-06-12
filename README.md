@@ -10,3 +10,7 @@ $table = new \tablestrap\table(array(
                                                        (array('id'=>'3', 'domain'=>'www.googless.com', 'name'=>'site3'))
                                                                                                                         )
                                                                                                                         );
+An example panel:
+$panel = new\tablestrap\panel(array('ID'=>'1', 'name'=>'word', 'status'=>'live')
+            );
+            echo $panel->render();
