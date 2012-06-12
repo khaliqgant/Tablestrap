@@ -4,29 +4,31 @@
  * @oa Khaliq
  */
 
+
 namespace tablestrap;
 
-class table{
-    /*
-     * table class can be as defined by Bootstrap default, striped, bordered, condensed, or a combination of these
-     */
-    private $table_class;
-    private $data;
-
-
-
+class table {
     /*
      * Constructor
      * @oa Khaliq
      * $data is the array of information to create the table
      */
 
-    public function __construct($data, $table_class = 'default')
+    public function __construct($data)
     {
-        $this->table_class = $table_class;
         $this->data        = $data;
     }
 
+    protected $data;
+    protected $table_class='';
+
+
+    public function striped(){
+        $this->table_class.=' table-striped';
+    }
+    public function bordered (){
+        $this->table_class.=' table-bordered';
+    }
 
 
     public function render()
@@ -51,8 +53,8 @@ class table{
 
         return $html;
     }
-}
 
+}
 
 
 

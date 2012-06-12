@@ -9,23 +9,10 @@
 
 namespace tablestrap;;
 
-class panel
+include_once 'table.class.php';
+
+class panel extends table
 {
-    private $table_class;
-    private $data;
-
-    /*
-     * Constructor
-     * @oa Khaliq
-     * table class defined by Bootstrap
-     */
-
-    public function __construct($data, $table_class='default')
-    {
-        $this->panel_class  = $table_class;
-        $this->data         = $data;
-
-    }
 
     public function render()
     {
@@ -40,6 +27,5 @@ class panel
     }
 
 }
-
 
 
