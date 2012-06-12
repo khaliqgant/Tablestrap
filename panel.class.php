@@ -11,13 +11,18 @@ namespace tablestrap;;
 
 class panel
 {
-    private $panel_class;
+    private $table_class;
     private $data;
 
+    /*
+     * Constructor
+     * @oa Khaliq
+     * table class defined by Bootstrap
+     */
 
-    public function __construct($data, $panel_class='default')
+    public function __construct($data, $table_class='default')
     {
-        $this->panel_class  = $panel_class;
+        $this->panel_class  = $table_class;
         $this->data         = $data;
 
     }
@@ -26,12 +31,12 @@ class panel
     {
         $html    = '<table class="' . $this->table_class . '">';
         foreach ($this->data as $key=>$value){
-            $html .= '<tr>'.$key . '</tr>';
+            $html .= '<tr><th>'.$key . '</th>';
+            $html .= '<td>' .$value.'</td></tr>';
         }
-        foreach ($this->data as $rows){
-            foreach ($rows as $value){
-            $html .= '<tr><th>' .$value. '</th></tr>';
-        }}
+        $html   .= '</table>';
+
+        return $html;
     }
 
 }
