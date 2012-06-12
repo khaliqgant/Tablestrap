@@ -33,13 +33,20 @@ class table{
     {
 
         $html   = '<table class="' . $this->table_class . '">';
-        $html  .=
-        foreach ($this->data[0] as $key => $value){
-        $html  .= '<thead><th>"' . $key. '"</th></thead>';
-            }
-            foreach ($this->data[0] as $value['id']){
-                $html   .= '<tr><td>"' .$value. '"</td></tr>';
-            }
+        $html  .= '<thead>';
+
+        foreach ($this->data[0] as $key=>$value){
+
+        $html  .= '<th>' . $key. '</th>';
+        }
+        $html  .= '</thead>';
+
+        foreach ($this->data as $rows){
+        $html  .= '<tr>';
+            foreach ($rows as $value){
+                $html   .= '<td>' .$value. '</td>';
+            }}
+        $html  .= '</tr>';
         $html  .= '</table>';
 
         return $html;
