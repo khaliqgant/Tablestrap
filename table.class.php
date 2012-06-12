@@ -11,7 +11,7 @@ class table{
      * table class can be as defined by Bootstrap default, striped, bordered, condensed, or a combination of these
      */
     private $table_class;
-    private $data, $key, $value;
+    private $data;
 
 
 
@@ -21,11 +21,10 @@ class table{
      * $data is the array of information to create the table
      */
 
-    public function __construct($table_class = 'default', $data = array())
+    public function __construct($data, $table_class = 'default')
     {
         $this->table_class = $table_class;
-        $this->data
-
+        $this->data        = $data;
     }
 
 
@@ -34,13 +33,15 @@ class table{
     {
 
         $html   = '<table class="' . $this->table_class . '">';
-            foreach ($data[0] as $key=>$value){
+        $html  .=
+        foreach ($this->data[0] as $key => $value){
         $html  .= '<thead><th>"' . $key. '"</th></thead>';
             }
-            foreach ($data as $value['id']){
+            foreach ($this->data[0] as $value['id']){
                 $html   .= '<tr><td>"' .$value. '"</td></tr>';
             }
         $html  .= '</table>';
+
         return $html;
     }
 }
