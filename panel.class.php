@@ -26,10 +26,11 @@ class panel extends table
         return $html;
     }
 
-}
 
-class form_panel extends panel{
+    public function add_form()
+    {}
     private $form_action, $form_method, $form_class;
+//params should be update the form and what it
 
     public function render(){
         $html     = '<form action="submit">';
