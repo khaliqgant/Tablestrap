@@ -8,6 +8,8 @@
  * //KTD add a license
  * //KTD add common uses
  *
+ * //WBN generic functions to manipulate common data (like dates, hex colors, money) to most readable format
+ *
  */
 
 

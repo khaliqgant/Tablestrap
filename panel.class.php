@@ -35,7 +35,7 @@ class panel extends table
         foreach ($this->data as $key => $value) {
             if (!in_array($key, $this->hidden_columns)) {
                 $html .= '<tr><th>' . $key . '</th>';
-                $html .= '<td>"' . $value . '"</td></tr>';
+                $html .= '<td>' . $value . '</td></tr>';
             }
         }
         $html .= '</table>';
