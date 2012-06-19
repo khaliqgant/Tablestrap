@@ -54,10 +54,12 @@ class table
     public function render()
     {
 
+        $keys = $this->keys();
+
         $html = '<table class="' . $this->table_class . '">';
         $html .= '<thead>';
 
-        foreach ($this->data[0] as $key => $value) {
+        foreach ($keys as $key) {
 
             $html .= '<th>' . $key . '</th>';
         }
@@ -65,8 +67,10 @@ class table
 
         foreach ($this->data as $rows) {
             $html .= '<tr>';
-            foreach ($rows as $value) {
-                $html .= '<td>' . $value . '</td>';
+            foreach ($rows as $key => $value) {
+                if (in_array($key, $keys)) {
+                    $html .= '<td>' . $value . '</td>';
+                }
             }
         }
         $html .= '</tr>';
@@ -76,17 +80,43 @@ class table
     }
 
     /*
-     * Hide Rows
+     * Find Keys
      * @author          Will
-     * @description     will not display the cols listed
+     * @description     finds the keys that should be used in TH
      *
-     * adds the keys to an array that is used in render function
+     * used in render function
+     * checks to see if the keys are in the array of hidden columns
+     *
+     * @returns array of the keys
      *
      */
-    public function hide_columns(/* Array of columns */) {
+    protected function keys()
+    {
+
+        $keys = array();
+
+        foreach ($this->data[0] as $key => $value) {
+            if (!in_array($key, $this->hidden_columns)) {
+                $keys[] = $key;
+            }
+        }
+
+        return $keys;
+    }
+
+    /*
+    * Hide Rows
+    * @author          Will
+    * @description     will not display the cols listed
+    *
+    * adds the keys to an array that is used in render function
+    *
+    */
+    public function hide_columns( /* Array of columns */)
+    {
         $columns_to_hide = func_get_args();
 
-        foreach($columns_to_hide as $col ) {
+        foreach ($columns_to_hide as $col) {
             $this->hidden_columns[$col] = $col;
         }
 
