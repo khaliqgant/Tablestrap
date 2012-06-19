@@ -1,10 +1,14 @@
 <?php
-/**
+/*
  * Created by Khaliq Gant
  * Date: 6/12/12
  * Time: 3:09 PM
  * @use to make a panel table quickly
  * @description
+ *
+ *
+ * //KTD put comments on the functions that describe what they do, what they are expected to return etc
+ *
  */
 
 namespace tablestrap;;
@@ -32,7 +36,7 @@ class panel extends table
     private $form_action, $form_method, $form_class;
 //params should be update the form and what it
 
-    public function render(){
+    public function render2(){
         $html     = '<form action="submit">';
         $html    .= '<table class="' . $this->table_class . '">';
         foreach ($this->data as $key=>$value){
@@ -44,6 +48,8 @@ class panel extends table
 
         return $html;
     }
+
+
 }
 
 
