@@ -90,7 +90,7 @@ class table
      * @returns array of the keys
      *
      */
-    protected function keys()
+    private function keys()
     {
 
         $keys = array();
