@@ -45,7 +45,7 @@ class table
     {
         $this->table_class .= ' table-bordered';
     }
-
+    //KTD add condensed function
 
     /*
      * Render
