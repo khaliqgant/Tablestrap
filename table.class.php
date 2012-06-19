@@ -18,7 +18,7 @@ namespace tablestrap;
 class table
 {
     protected $data;
-    protected $table_class = '';
+    protected $table_class = 'table ';
     protected $hidden_columns = array();
 
     /*
@@ -33,6 +33,9 @@ class table
     }
 
 
+    //KTD add ability to take away stripes or bordered
+    //KTD make stripped and bordered the default
+    //KTD add comments to these functions
     public function striped()
     {
         $this->table_class .= ' table-striped';
@@ -107,13 +110,19 @@ class table
     }
 
     /*
-    * Hide Rows
-    * @author          Will
-    * @description     will not display the cols listed
-    *
-    * adds the keys to an array that is used in render function
-    *
-    */
+     * Hide Rows
+     * @author          Will
+     * @description     will not display the cols listed
+     *
+     * adds the keys to an array that is used in render function
+     *
+     * @example
+     * $panel->hide_columns('fb_key', 'fb_app_id', 'fb_secret');
+     *
+     *
+     * //WBN add ability to pass an array as well as an argument
+     *
+     */
     public function hide_columns( /* Array of columns */)
     {
         $columns_to_hide = func_get_args();
