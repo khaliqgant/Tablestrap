@@ -44,6 +44,18 @@ class panel extends table
     }
 
 
+    /*
+     * Panel Delete row
+     * @author Will
+     * @description   this doesn't make sense in a panel so it throws an error
+     *
+     *
+     */
+    public function delete_column() {
+        throw new \Exception('Panels can not have a delete column yet.');
+    }
+
+
     public function add_form()
     {
     }
